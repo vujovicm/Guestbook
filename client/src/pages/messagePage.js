@@ -11,7 +11,8 @@ const Message = () => {
        <input type="text"></input>
 
        <button onClick="this.disabled=true"> Post </button>
-       {/* add onClick attr function for status and add send */}
+       {/* add onClick attr function for status below and disable after click
+       and add send */}
 
        </> 
         
