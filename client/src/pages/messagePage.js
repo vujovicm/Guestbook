@@ -3,6 +3,7 @@ import React from "react";
 const Message = () => {
     return (
        <>
+       <h1> Leave a message here </h1>
        <label> Message: </label>
        <input type="text"></input>
 
