@@ -1,13 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+import Welcome from './pages/welcomePage';
+import Message from './pages/messagePage';
 
 function App() {
-  return <div className="App"> 
-    <h1> Guestbook </h1>
-    <h3> See what people wrote about us and leave a message.</h3>
-
-    <button> Leave a message </button>
-  
-   </div>;
+  return (
+    <Router>
+      <Routes>
+        <Route exact path='/' element={<Welcome />} />
+        <Route path='/message' element={<Message />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
