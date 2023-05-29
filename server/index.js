@@ -34,6 +34,10 @@ app.post("/api/insert", (req, res) => {
     });
 });
 
+app.get("/", (req, res) => {
+    res.send("This is server");
+});
+
 app.listen(3001, () => {
     console.log('listening on 3001');
 });
