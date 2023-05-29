@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
+const bodyParser= require('body-parser');
+const cors = require('cors');
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -9,18 +11,26 @@ const db = mysql.createConnection({
     database: "guestbookdb",
 });
 
-db.connect(function(err){
-    if (err) console.log("No conn");
-    else console.log("Conected");
-})
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors());
+app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/api/get", (req, res) => {
+    const sqlSelect = "SELECT * FROM guests ORDER BY id desc LIMIT 10;"; 
+    db.query(sqlSelect, (err, result) => {
+        res.send(result);
+    })
+});
 
-    const sqlInsert = "INSERT INTO guests (name, message) VALUES ('maja', 'test');";
-    db.query(sqlInsert, (err, result) => {
-        if (err) console.log('err');
-        if (result) console.log(result)
-        res.send("hello world1");
+app.post("/api/insert", (req, res) => {
+
+    const name = req.body.name;
+    const message = req.body.message;
+
+    const sqlInsert = "INSERT INTO guests (message, name) VALUES (?,?);";
+    db.query(sqlInsert, [message, name], (err, result) => {
+        console.log(result);
+
     });
 });
 
