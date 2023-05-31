@@ -29,7 +29,8 @@ app.post("/api/insert", (req, res) => {
 
     const sqlInsert = "INSERT INTO guests (message, name) VALUES (?,?);";
     db.query(sqlInsert, [message, name], (err, result) => {
-        console.log(result);
+        //console.log(result);
+        res.send(result);
     });
 });
 

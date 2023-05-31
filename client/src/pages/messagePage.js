@@ -15,12 +15,17 @@ const Message = () => {
 
         Axios.post("http://localhost:3001/api/insert",
             {message: message, name: name})
+            .then((response) => { 
+                const r= response.status;
+                if (r>=200 && r<300) { 
+                    document.getElementById("status").innerHTML = "success";}
+                else if (r>=400) { 
+                    document.getElementById("status").innerHTML = "failed";}
+                
+            })
             .catch(err => console.log(err))
         ;
 
-        //if success,fail
-
-        document.getElementById("status").innerHTML = "success";
     }
 
 
