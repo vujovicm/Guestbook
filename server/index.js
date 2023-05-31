@@ -17,20 +17,19 @@ app.use(express.json());
 
 app.get("/api/get", (req, res) => {
     const sqlSelect = "SELECT * FROM guests ORDER BY id desc LIMIT 10;"; 
+
     db.query(sqlSelect, (err, result) => {
         res.send(result);
     })
 });
 
 app.post("/api/insert", (req, res) => {
-
     const name = req.body.name;
     const message = req.body.message;
 
     const sqlInsert = "INSERT INTO guests (message, name) VALUES (?,?);";
     db.query(sqlInsert, [message, name], (err, result) => {
         console.log(result);
-
     });
 });
 

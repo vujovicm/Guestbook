@@ -28,7 +28,7 @@ const Welcome = () => {
         
         {list.map((val) => {
             return(
-                <div> 
+                <div key={val.id}> 
                 ID: {val.id} | 
                 Message: {val.message} |
                 Name: {val.name}

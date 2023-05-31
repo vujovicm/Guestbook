@@ -7,22 +7,22 @@ const Message = () => {
     const [name, setName] = useState('');
 
     const Submit = () => {
-        Axios.post("http://localhost:3001/api/insert", 
-            {message: message, name: name});
-        Disable();
-        //SetStatus();
 
-    }
-
-    const Disable = () => {
         const button= document.getElementById("b");
         button.disabled = true;
+        
+        document.getElementById("status").innerHTML = "sending";
+
+        Axios.post("http://localhost:3001/api/insert",
+            {message: message, name: name})
+            .catch(err => console.log(err))
+        ;
+
+        //if success,fail
+
+        document.getElementById("status").innerHTML = "success";
     }
 
-    // const SetStatus = () => {
-    //     if()
-
-    // }
 
     return (
        <form>
@@ -38,7 +38,9 @@ const Message = () => {
         setName(e.target.value);
        }}></input>
 
+       <div>
        <button id="b" onClick={ Submit }> Post </button>
+       <div id="status">  </div></div>
        </form> 
         
         );
