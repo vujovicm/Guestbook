@@ -8,22 +8,26 @@
 - npm 9.6.7 
 
 Back-end/ server folder
-    dependencies:  - body-parser
-                - cors
-                - express
-                - mysql2
-                - nodemon          
-    run: npm run devStart
+dependencies:
+- body-parser
+- cors
+- express
+- mysql2
+- nodemon          
+**run:** npm run devStart
 
 
 Front-end/ client folder
-    dependencies : - axios
-    run : npm start
+dependencies : 
+- axios
+**run:** npm start
  
 mysql database
-    MySQLWorkbench : - created schema guestbookdb
-                    - created table guests
-        > host: "localhost",
-        > user: "root",
-        > password: "majamaja", 
-        > database: "guestbookdb"
+    MySQLWorkbench :
+- created schema guestbookdb
+> host: "localhost",
+> user: "root",
+> password: "majamaja", 
+> database: "guestbookdb"
+- created table guests
+
