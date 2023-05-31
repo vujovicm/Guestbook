@@ -6,7 +6,7 @@ const Message = () => {
     const [message, setMessage] = useState('');
     const [name, setName] = useState('');
 
-    const Submit = () => {
+    const submit = () => {
 
         const button= document.getElementById("b");
         button.disabled = true;
@@ -25,30 +25,30 @@ const Message = () => {
             })
             .catch(err => console.log(err))
         ;
-
     }
 
 
     return (
        <form>
-       <h2> Leave a message here </h2>
-       <label> Message: </label>
-       <input type="text" onChange={(e) => {
-        setMessage(e.target.value);
-       }}></input>
+            <h2> Leave a message here </h2>
+            <label> Message: </label>
+            <input type="text" onChange={(e) => {
+                setMessage(e.target.value);
+                }}>
+            </input>
 
        
-       <label> Name: </label>
-       <input type="text" onChange={(e) => {
-        setName(e.target.value);
-       }}></input>
+           <label> Name: </label>
+           <input type="text" onChange={(e) => {
+                setName(e.target.value);
+                }}>
+            </input>
 
-       <div>
-       <button id="b" onClick={ Submit }> Post </button>
-       <div id="status">  </div></div>
+           <div>
+           <button id="b" onClick={ submit }> Post </button>
+           <div id="status">  </div></div>
        </form> 
-        
-        );
+    );
 };
 
 export default Message;
