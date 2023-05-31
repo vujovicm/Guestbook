@@ -7,23 +7,23 @@
 - node v18.16.0
 - npm 9.6.7 
 
-Back-end/ server folder
-dependencies:
+Back-end/ server folder  
+Dependencies:
 - body-parser
 - cors
 - express
 - mysql2
-- nodemon          
+- nodemon            
 **run:** npm run devStart
 
 
-Front-end/ client folder
-dependencies : 
-- axios
+Front-end/ client folder  
+Dependencies: 
+- axios  
 **run:** npm start
  
-mysql database
-    MySQLWorkbench :
+MySQL database  
+MySQLWorkbench:
 - created schema guestbookdb
 > host: "localhost",
 > user: "root",
