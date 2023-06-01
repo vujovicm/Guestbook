@@ -24,12 +24,12 @@ Dependencies:
  
 MySQL database  
 MySQLWorkbench 8.0 CE:
-> host: "localhost",
-> user: "root",
-> password: "majamaja", 
+> host: "localhost",  
+> user: "root",  
+> password: "majamaja",   
 > database: "guestbookdb"
-- created table guests
 - created schema guestbookdb
+- created table guests
 
 To do:  
 front-end styling
