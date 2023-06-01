@@ -29,6 +29,7 @@ const Welcome = () => {
         {list.map((val) => {
             return(
                 <div key={val.id}> 
+                {/* Showing ID to check if correct messages are displayed */}
                 ID: {val.id} | 
                 Message: {val.message} |
                 Name: {val.name}
