@@ -24,9 +24,9 @@ Dependencies:
  
 MySQL database  
 MySQLWorkbench 8.0 CE:
-> host: "localhost",  
-> user: "root",  
-> password: "majamaja",   
+> host: "localhost"  
+> user: "root"  
+> password: "majamaja"   
 > database: "guestbookdb"
 - created schema guestbookdb
 - created table guests
